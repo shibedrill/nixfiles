@@ -20,9 +20,9 @@
   home.packages = with pkgs; [
     rustup
     github-cli
-    nushell
     hyfetch
-    lolcat
+    gcc
+    openssl
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -61,6 +61,17 @@
     SHELL = "nu";
   };
 
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/.cargo/bin"
+  ];
+
+  programs.nushell.enable = true;
+  programs.zsh.enable = true;
+  programs.starship = {
+    enable = true;
+  };
+
   programs.git = {
     enable = true;
     userName = "shibedrill";
@@ -71,5 +82,4 @@
     };
   };
 
-  programs.starship.enable = true;
 }

@@ -16,6 +16,7 @@
     git
     gnupg
     pinentry-curses
+    file
   ];
 
   programs.gnupg.agent.enable = true;
