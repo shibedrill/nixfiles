@@ -15,11 +15,15 @@
     curl
     git
     gnupg
+    pinentry-qt
     pinentry-curses
     file
   ];
 
   programs.gnupg.agent.enable = true;
+  programs.gnupg.agent.settings = {
+    pinentry-program = pkgs.lib.mkForce "${pkgs.pinentry-qt.out}/bin/pinentry-qt";
+  };
   programs.nix-ld.enable = true;
 
   users.users.river = {
@@ -27,6 +31,7 @@
     home = "/home/river";
     description = "River";
     extraGroups = [ "wheel" ];
+    shell = pkgs.nushell;
   };
 
   imports = [
