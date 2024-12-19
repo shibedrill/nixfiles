@@ -21,6 +21,8 @@
     rustup
     github-cli
     nushell
+    hyfetch
+    lolcat
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -58,9 +60,6 @@
     EDITOR = "vim";
     SHELL = "nu";
   };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 
   programs.git = {
     enable = true;
