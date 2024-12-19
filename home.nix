@@ -21,7 +21,6 @@
     rustup
     github-cli
     nushell
-    gnupg
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -67,6 +66,10 @@
     enable = true;
     userName = "shibedrill";
     userEmail = "shibedrill1@gmail.com";
+    extraConfig = {
+      commit.gpgsign = true;
+      user.signingkey = "6B7449FFE64C92C2";
+    };
   };
 
   programs.starship.enable = true;

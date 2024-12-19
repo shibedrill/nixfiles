@@ -14,8 +14,11 @@
     wget
     curl
     git
+    gnupg
+    pinentry-curses
   ];
 
+  programs.gnupg.agent.enable = true;
   programs.nix-ld.enable = true;
 
   users.users.river = {
